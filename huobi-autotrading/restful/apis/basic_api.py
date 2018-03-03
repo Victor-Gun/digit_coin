@@ -55,6 +55,19 @@ def get_trade(symbol):
     return http_get_request(url, params)
 
 
+# 获取批量交易信息tradedetail
+def get_batch_trade(symbol, size):
+    """
+    :param symbol
+    :param size
+    :return:
+    """
+    params = {'symbol': symbol, 'size': size}
+
+    url = MARKET_URL + '/market/history/trade'
+    return http_get_request(url, params)
+
+
 # 获取merge ticker
 def get_ticker(symbol):
     """
@@ -88,6 +101,18 @@ def get_symbols(long_polling=None):
     if long_polling:
         params['long-polling'] = long_polling
     path = '/v1/common/symbols'
+    return api_key_get(params, path)
+
+
+# 获取火币支持的交易对
+def get_currencys(long_polling=None):
+    """
+
+    """
+    params = {}
+    if long_polling:
+        params['long-polling'] = long_polling
+    path = '/v1/common/currencys'
     return api_key_get(params, path)
 
 
