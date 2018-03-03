@@ -61,7 +61,7 @@ def save_kline():
                 'replace': 'k_line_data',
                 'domain_array': domain_array,
                 'value_array': [
-                    symbol,
+                    symbol[0],
                     period,
                     kl['id'],
                     kl['open'],
