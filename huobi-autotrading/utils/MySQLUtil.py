@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from restful import settings
 import pymysql
 
+import settings
 
-class MySQL:
+
+class MySQLUtil:
     __db = None
 
     # 在这里配置自己的SQL服务器
